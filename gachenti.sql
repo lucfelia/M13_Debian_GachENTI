@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS gachenti
+CREATE DATABASE IF NOT EXISTS gachenti;
 USE gachenti;
 
 
@@ -10,15 +10,15 @@ CREATE TABLE user_types (
 
 CREATE TABLE users (
   id_user       INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name          VARCHAR(24)  NOT NULL,
-  surname       VARCHAR(24)  NOT NULL,
-  username      VARCHAR(16)  NOT NULL,
-  email         VARCHAR(32)  NOT NULL,
-  password      CHAR(32)     NOT NULL,
-  birthdate     DATE         NOT NULL,
-  funds         DECIMAL(8,2) NOT NULL,
-  registered    DATETIME     NOT NULL,
-  status        INT          NOT NULL,
+  name          VARCHAR(24)  ,
+  surname       VARCHAR(24)  ,
+  username      VARCHAR(16)  ,
+  email         VARCHAR(32)  ,
+  password      CHAR(32)     ,
+  birthdate     DATE         ,
+  funds         DECIMAL(8,2) ,
+  registered    DATETIME     ,
+  status        INT          ,
   id_user_type  INT UNSIGNED NOT NULL,
   FOREIGN KEY (id_user_type) REFERENCES user_types(id_user_type)
 );
