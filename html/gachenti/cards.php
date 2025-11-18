@@ -24,18 +24,14 @@ if (mysqli_num_rows($result) <= 0) {
 	die("Error 1: No hay cartas");
 }
 
-$contenido = "<section>\n";
-$contenido .= "\t<h2>Listado de cartas</h2>\n";
-$contenido .= "\t<ol>\n";
+echo "<ol>";
+while($card = mysqli_fetch_assoc($result)){
+	echo <<<EOD
+<li><strong>CardID:</strong> {$card["id_card"]}; <strong>Card:</strong> {$card["card"]}; <strong>Price:</strong> {$card["price"]}</li>
+EOD;
 
-while ($card = mysqli_fetch_assoc($result)) {
-	$contenido .= "\t\t<li><strong>CardID:</strong> {$card["id_card"]}; ";
-	$contenido .= "<strong>Card:</strong> {$card["card"]}; ";
-	$contenido .= "<strong>Price:</strong> {$card["price"]}</li>\n";
 }
-
-$contenido .= "\t</ol>\n";
-$contenido .= "</section>\n";
+echo "</ol>";
 
 writeMain($contenido);
 
