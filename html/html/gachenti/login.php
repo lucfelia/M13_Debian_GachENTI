@@ -22,7 +22,7 @@ $datos = <<<EOD
 		<p><label for="reg_username">Usuario </label><input type="text" name="username" id="reg_username" /></p>
 		<p><label for="reg_password">Contraseña </label><input type="password" name="password" id="reg_password" /></p>
 		<p><label for="reg_password2">Repite contraseña </label><input type="password" name="password2" id="reg_password2" /></p>
-		<p><label for="reg_birthdate">Nacimiento </label><input type="date" name="birthdate" id="reg_birthdate" /></p>
+		<p><label for="reg_year">Año de nacimiento </label><input type="number" name="birthyear" id="reg_year" /></p>
 		<p><label for="reg_email">Email </label><input type="email" name="email" id="reg_email" /></p>
 		<p><input type="submit" value="Registrar" /></p>
 	</form>

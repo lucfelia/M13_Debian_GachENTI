@@ -23,23 +23,6 @@ EOD;
 
 function writeHeader()
 {
-	$login_logout = <<<EOD
-
-    <li><a href="login.php">Login/Registro</a></li>
-EOD;
-
-if (isset($_SESSION["id_user"])){
-
-    $login_logout = <<<EOD
-
-        <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="logout.php">Log out/Registro</a></li>
-
-EOD;
-
-}
-
-
 	echo <<<EOD
 <header>
 	<h1>gachENTI</h1>
@@ -48,7 +31,8 @@ EOD;
 			<li><a href="index.php">Portada</a></li>
 			<li><a href="cards.php">Cartas</a></li>
 			<li><a href="shop.php">Compra/Venta</a></li>
-			</menu>
+			<li><a href="login.php">Login/Registro</a></li>
+		</menu>
 	</nav>
 </header>
 EOD;
