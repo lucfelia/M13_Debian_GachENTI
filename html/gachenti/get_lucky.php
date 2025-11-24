@@ -49,14 +49,15 @@ for ($i = $num_cards; $i > 0; $i--){
 	</article>
 EOD;
 
-
 	$card_state = rand(80, 100);
 
-	$card_price = 0;
+    $base_price = isset($card["price"]) ? intval($card["price"]) : 0;
+    if ($base_price <= 0){
+        $base_price = rand(5, 20);
+    }
 
-	if (isset($card["price"])){
-		$card_price = rand($card["price"] - 4, $card["price"]);
-	}
+    $min_price = max(1, $base_price - 4);
+    $card_price = rand($min_price, $base_price);
 
 	$query_insert = <<<EOD
 INSERT INTO cards (price, state, id_card_template)
